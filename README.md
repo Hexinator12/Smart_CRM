@@ -135,29 +135,33 @@ npm install
 yarn install
 ```
 
-3️⃣ **Configure Firebase**
+3️⃣ **Configure Environment Variables**
 
-Create a `firebase.js` file in the `src` directory:
+Create a `.env` file in the root directory by copying the example:
 
-```javascript
-// src/firebase.js
-import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
-
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID",
-};
-
-const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
-export const db = getFirestore(app);
+```bash
+cp .env.example .env
 ```
+
+Then update the `.env` file with your Firebase credentials:
+
+```env
+REACT_APP_FIREBASE_API_KEY=your_api_key_here
+REACT_APP_FIREBASE_AUTH_DOMAIN=your_project_id.firebaseapp.com
+REACT_APP_FIREBASE_PROJECT_ID=your_project_id
+REACT_APP_FIREBASE_STORAGE_BUCKET=your_project_id.firebasestorage.app
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+REACT_APP_FIREBASE_APP_ID=your_app_id
+```
+
+> 🔐 **Security Note:** Never commit your `.env` file to version control. It's already included in `.gitignore`.
+
+**To get your Firebase credentials:**
+
+1. Go to [Firebase Console](https://console.firebase.google.com/)
+2. Select your project (or create a new one)
+3. Go to Project Settings > General
+4. Scroll down to "Your apps" and copy the config values
 
 4️⃣ **Start the development server**
 
