@@ -357,7 +357,7 @@ Need help? Have questions?
 
 ### ⭐ Star this repo if you find it helpful!
 
-Made with ❤️ by the SmartCRM Team
+Made with ❤️ by Meet Patel
 
 **[Back to Top](#-smartcrm)**
 
